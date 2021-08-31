@@ -14,7 +14,8 @@ class Config:
 class DevelopmentConfig(Config):
     """Конфиг для отладки"""
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = f"sqlite:///{os.path.join(basedir, 'data-dev.sqlite')}"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///data-dev.db"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 config = {
     'development': DevelopmentConfig,
